@@ -19,19 +19,10 @@
                     { icon: "ri-secure-payment-line", title: "Secure Checkout", desc: "Multiple payment options with encryption" }
                 ],
                 images: [
-                    "image/Beauty.jpeg",
                     "image/beauty 1.png",
                     "image/beauty2.png",
                     "image/beauty 4.png",
-                    "image/Beauty Ecommerce App_home 2.png",
-                    "image/Beauty Ecommerce App_sign up 2.png",
-                    "image/Beauty Ecommerce App_product 3.png",
-                    "image/Beauty Ecommerce App_cart 2.png",
-                    "image/Beauty Ecommerce App_search6.png",
-                    "image/Beauty Ecommerce App_wishist 5.png",
-                    "image/Beauty Ecommerce App_checkout 5.png",
-                    "image/Beauty Ecommerce App_notification 6.png",
-                    "image/Beauty Ecommerce App_confirmation 7.png"
+                    "image/Beauty.jpeg"
                 ]
             },
             2: {
