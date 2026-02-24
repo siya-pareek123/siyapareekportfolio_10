@@ -19,6 +19,9 @@
                     { icon: "ri-secure-payment-line", title: "Secure Checkout", desc: "Multiple payment options with encryption" }
                 ],
                 images: [
+                    "image/beauty 1.png",
+                    "image/beauty2.png",
+                    "image/beauty 4.png",
                     "image/Beauty Ecommerce App_home 2.png",
                     "image/Beauty Ecommerce App_sign up 2.png",
                     "image/Beauty Ecommerce App_product 3.png",
@@ -48,6 +51,12 @@
                     { icon: "ri-shield-check-line", title: "Data Privacy", desc: "Secure handling of health information" }
                 ],
                 images: [
+                    "image/HEALTH 1.png",
+                    "image/HEALTH 2.png",
+                    "image/HEALTH 3.png",
+                    "image/HEALTH 4.png",
+                    "image/HEALTH 5.png",
+                    "image/HEALTH 6.png",
                     "image/AI Health Care Assistant App_00000.png",
                     "image/AI Health Care Assistant App_111.png",
                     "image/AI Health Care Assistant App_4.png",
