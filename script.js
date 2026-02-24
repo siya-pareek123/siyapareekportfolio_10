@@ -291,6 +291,135 @@
             }
         });
 
+        // Touch-friendly modal close with swipe down
+        let touchStartY = 0;
+        let touchEndY = 0;
+
+        modal.addEventListener('touchstart', (e) => {
+            touchStartY = e.changedTouches[0].screenY;
+        }, { passive: true });
+
+        modal.addEventListener('touchend', (e) => {
+            touchEndY = e.changedTouches[0].screenY;
+            // Swipe down to close (threshold of 150px)
+            if (touchEndY - touchStartY > 150) {
+                modal.classList.remove('active');
+                modalClose.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            }
+        }, { passive: true });
+
+        // Enhanced touch events for project cards
+        document.querySelectorAll('.project-card').forEach(card => {
+            // Add touch feedback
+            card.addEventListener('touchstart', function() {
+                this.style.transform = 'scale(0.98)';
+            }, { passive: true });
+
+            card.addEventListener('touchend', function() {
+                this.style.transform = '';
+            }, { passive: true });
+
+            card.addEventListener('touchcancel', function() {
+                this.style.transform = '';
+            }, { passive: true });
+        });
+
+        // Improved scroll-triggered animations with stagger effect
+        const staggerObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    // Add staggered delay based on element position
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 100);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        // Apply stagger animation to project cards
+        document.querySelectorAll('.project-card').forEach((card, index) => {
+            card.style.transitionDelay = `${index * 0.1}s`;
+            staggerObserver.observe(card);
+        });
+
+        // Smooth scroll with offset for fixed header on mobile
+        const smoothScrollWithOffset = (target) => {
+            const headerOffset = 80; // Height of fixed header
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+            });
+        };
+
+        // Enhanced navigation for mobile
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const target = document.querySelector(targetId);
+                
+                if (target) {
+                    // Close mobile menu if open
+                    mobileMenu.classList.add('hidden');
+                    
+                    // Smooth scroll with offset
+                    smoothScrollWithOffset(target);
+                }
+            });
+        });
+
+        // Handle orientation change
+        window.addEventListener('orientationchange', () => {
+            // Resize canvas for particles
+            resizeCanvas();
+            
+            // Close modal on orientation change for better UX
+            if (modal.classList.contains('active')) {
+                setTimeout(() => {
+                    // Recalculate modal position
+                }, 100);
+            }
+        });
+
+        // Prevent body scroll when modal is open on iOS
+        const preventBodyScroll = (e) => {
+            if (modal.classList.contains('active')) {
+                const target = e.target.closest('.modal-content');
+                if (!target) {
+                    e.preventDefault();
+                }
+            }
+        };
+
+        // Only apply on iOS Safari
+        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+        if (isIOS) {
+            document.body.addEventListener('touchmove', preventBodyScroll, { passive: false });
+        }
+
+        // Double-tap to close modal on mobile
+        let lastTap = 0;
+        modal.addEventListener('touchend', (e) => {
+            const currentTime = new Date().getTime();
+            const tapLength = currentTime - lastTap;
+            if (tapLength < 500 && tapLength > 0) {
+                // Double tap detected
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    modalClose.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            }
+            lastTap = currentTime;
+        }, { passive: true });
+
         // Particle System for Main Page
         const canvas = document.getElementById('particle-canvas');
         const ctx = canvas.getContext('2d');
