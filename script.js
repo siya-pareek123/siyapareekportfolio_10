@@ -19,6 +19,7 @@
                     { icon: "ri-secure-payment-line", title: "Secure Checkout", desc: "Multiple payment options with encryption" }
                 ],
                 images: [
+                    "image/Beauty.jpeg",
                     "image/beauty 1.png",
                     "image/beauty2.png",
                     "image/beauty 4.png",
