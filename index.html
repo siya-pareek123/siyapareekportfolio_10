@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siya Pareek - UI/UX Designer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800 overflow-x-hidden">
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+    
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold gradient-text">SP</a>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Home</a>
+                    <a href="#about" class="nav-link text-gray-700 hover:text-purple-600 font-medium">About</a>
+                    <a href="#education" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Education</a>
+                    <a href="#experience" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Experience</a>
+                    <a href="#projects" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Projects</a>
+                    <a href="#skills" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Skills</a>
+                    <a href="#contact" class="nav-link text-gray-700 hover:text-purple-600 font-medium">Contact</a>
+                </div>
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#home" class="block py-2 text-gray-700 hover:text-purple-600">Home</a>
+                <a href="#about" class="block py-2 text-gray-700 hover:text-purple-600">About</a>
+                <a href="#education" class="block py-2 text-gray-700 hover:text-purple-600">Education</a>
+                <a href="#experience" class="block py-2 text-gray-700 hover:text-purple-600">Experience</a>
+                <a href="#projects" class="block py-2 text-gray-700 hover:text-purple-600">Projects</a>
+                <a href="#skills" class="block py-2 text-gray-700 hover:text-purple-600">Skills</a>
+                <a href="#contact" class="block py-2 text-gray-700 hover:text-purple-600">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+        <div class="blob w-96 h-96 bg-purple-300 top-20 left-10"></div>
+        <div class="blob w-80 h-80 bg-blue-300 bottom-20 right-10" style="animation-delay: 2s;"></div>
+        <div class="blob w-64 h-64 bg-pink-300 top-1/2 left-1/2" style="animation-delay: 4s;"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <p class="text-purple-600 font-semibold text-lg mb-2">Hello, I'm</p>
+                    <h1 class="text-5xl md:text-6xl font-bold mb-4 text-3d">
+                        <span class="gradient-text">Siya Pareek</span>
+                    </h1>
+                    <h2 class="text-2xl md:text-3xl text-gray-600 mb-6 typing-effect">UI/UX Designer</h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Focused on designing engaging and user-friendly interfaces that align with business goals and enhance user satisfaction.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="gradient-bg text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all card-hover glow">
+                            View My Work
+                        </a>
+                        <a href="#contact" class="border-2 border-purple-600 text-purple-600 px-8 py-3 rounded-full font-semibold hover:bg-purple-600 hover:text-white transition-all">
+                            Contact Me
+                        </a>
+                    </div>
+                    <div class="flex gap-6 mt-8">
+                        <a href="https://www.linkedin.com/in/siya-pareek-5b9b3b367/" target="_blank" class="text-gray-600 hover:text-purple-600 transition-colors transform hover:scale-125">
+                            <i class="ri-linkedin-fill text-3xl"></i>
+                        </a>
+                        <a href="mailto:siyapareek18@gmail.com" class="text-gray-600 hover:text-purple-600 transition-colors transform hover:scale-125">
+                            <i class="ri-mail-send-fill text-3xl"></i>
+                        </a>
+                        <a href="tel:+91895549035" class="text-gray-600 hover:text-purple-600 transition-colors transform hover:scale-125">
+                            <i class="ri-phone-fill text-3xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="fade-in flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 gradient-bg rounded-full opacity-20 blur-3xl floating"></div>
+                        <div class="cube-container absolute -top-10 -right-10">
+                            <div class="cube">
+                                <div class="cube-face"></div>
+                                <div class="cube-face"></div>
+                                <div class="cube-face"></div>
+                                <div class="cube-face"></div>
+                                <div class="cube-face"></div>
+                                <div class="cube-face"></div>
+                            </div>
+                        </div>
+                        <img src="profile.jpeg" alt="Siya Pareek" class="relative w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-4 border-white shadow-2xl floating">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">About <span class="gradient-text">Me</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="fade-in">
+                    <img src="profile.jpeg" alt="About Siya" class="rounded-2xl shadow-2xl w-full max-w-md mx-auto transform hover:rotate-2 transition-all duration-500">
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-3xl font-bold mb-6">Passionate UI/UX Designer</h3>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        I'm a UI/UX Designer based in Kota, Rajasthan, dedicated to creating intuitive and visually appealing digital experiences. With a strong foundation in both design principles and technical understanding from my Computer Application studies, I bridge the gap between user needs and business objectives.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        My approach combines thorough user research with creative problem-solving to deliver designs that not only look great but also function seamlessly. I believe in the power of good design to transform user experiences and drive business success.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-purple-50 p-4 rounded-xl card-hover">
+                            <i class="ri-palette-line text-3xl text-purple-600 mb-2"></i>
+                            <h4 class="font-semibold text-lg">Visual Design</h4>
+                            <p class="text-gray-600 text-sm">Creating beautiful interfaces</p>
+                        </div>
+                        <div class="bg-blue-50 p-4 rounded-xl card-hover">
+                            <i class="ri-user-search-line text-3xl text-blue-600 mb-2"></i>
+                            <h4 class="font-semibold text-lg">User Research</h4>
+                            <p class="text-gray-600 text-sm">Understanding user needs</p>
+                        </div>
+                        <div class="bg-green-50 p-4 rounded-xl card-hover">
+                            <i class="ri-layout-grid-line text-3xl text-green-600 mb-2"></i>
+                            <h4 class="font-semibold text-lg">Wireframing</h4>
+                            <p class="text-gray-600 text-sm">Structuring user flows</p>
+                        </div>
+                        <div class="bg-orange-50 p-4 rounded-xl card-hover">
+                            <i class="ri-test-tube-line text-3xl text-orange-600 mb-2"></i>
+                            <h4 class="font-semibold text-lg">Usability Testing</h4>
+                            <p class="text-gray-600 text-sm">Validating designs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Education & <span class="gradient-text">Training</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover fade-in flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-purple-50 to-blue-50 p-8 rounded-2xl">
+                            <div class="flex items-start gap-4">
+                                <div class="gradient-bg p-4 rounded-xl">
+                                    <i class="ri-graduation-cap-line text-3xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">Bachelor of Computer Application</h3>
+                                    <p class="text-purple-600 font-semibold mb-1">Career Point University</p>
+                                    <p class="text-gray-500 text-sm mb-3">2023 - Present</p>
+                                    <p class="text-gray-600">Pursuing degree with focus on computer applications and technology fundamentals.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back gradient-bg text-white p-8 rounded-2xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="ri-book-open-line text-6xl mb-4"></i>
+                                <p class="text-xl font-bold">Learning & Growing</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-lg card-hover fade-in flip-card">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front bg-gradient-to-br from-green-50 to-emerald-50 p-8 rounded-2xl">
+                            <div class="flex items-start gap-4">
+                                <div class="gradient-bg p-4 rounded-xl">
+                                    <i class="ri-certificate-line text-3xl text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold mb-2">UI/UX Design Training Certificate</h3>
+                                    <p class="text-purple-600 font-semibold mb-1">Internshala</p>
+                                    <p class="text-gray-500 text-sm mb-3">Completed</p>
+                                    <p class="text-gray-600">Comprehensive training in UI/UX design principles, tools, and best practices.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flip-card-back gradient-bg text-white p-8 rounded-2xl flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="ri-award-line text-6xl mb-4"></i>
+                                <p class="text-xl font-bold">Certified Designer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Work <span class="gradient-text">Experience</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg card-hover fade-in">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-2">UI/UX Design Intern</h3>
+                            <p class="text-purple-600 font-semibold text-lg">Expelle IT Solutions</p>
+                            <p class="text-gray-500">Kota, Rajasthan</p>
+                        </div>
+                        <div class="gradient-bg text-white px-4 py-2 rounded-full text-sm font-semibold mt-4 md:mt-0 w-fit glow">
+                            Internship
+                        </div>
+                    </div>
+                    <div class="space-y-3">
+                        <div class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-purple-600 text-xl mt-1 pulse"></i>
+                            <p class="text-gray-700">Designed landing pages and web page layouts</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-purple-600 text-xl mt-1 pulse"></i>
+                            <p class="text-gray-700">Created wireframes and UI designs in Figma</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-purple-600 text-xl mt-1 pulse"></i>
+                            <p class="text-gray-700">Improved layout and visual hierarchy</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-purple-600 text-xl mt-1 pulse"></i>
+                            <p class="text-gray-700">Designed user-friendly web interfaces</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <i class="ri-checkbox-circle-fill text-purple-600 text-xl mt-1 pulse"></i>
+                            <p class="text-gray-700">Worked on responsive web designs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Featured <span class="gradient-text">Projects</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Explore my recent UI/UX design projects showcasing user-centered design solutions</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in project-card" data-project="1">
+                    <div class="overflow-hidden">
+                        <img src="/image/Beauty Ecommerce App_home 2.png" alt="Beauty Ecommerce App" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-pink-100 text-pink-600 px-3 py-1 rounded-full text-sm font-semibold">E-Commerce</span>
+                            <span class="bg-purple-100 text-purple-600 px-3 py-1 rounded-full text-sm font-semibold">Mobile App</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Beauty Ecommerce App</h3>
+                        <p class="text-gray-600 mb-4">Designed a visually appealing e-commerce mobile application focused on enhancing the online shopping experience. Features clean interface, easy product navigation, secure checkout process, and personalized recommendations.</p>
+                        <div class="flex gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">UI Design</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">User Flow</span>
+                        </div>
+                        <button class="mt-4 w-full gradient-bg text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all card-hover open-project">
+                            <i class="ri-eye-line mr-2"></i>View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in project-card" data-project="2">
+                    <div class="overflow-hidden">
+                        <img src="/image/AI Health Care Assistant App_Desktop - 6.png" alt="AI Health Care Assistant App" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Healthcare</span>
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">AI</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">AI Health Care Assistant App</h3>
+                        <p class="text-gray-600 mb-4">Designed an AI-based health care mobile application by identifying problems and user needs. Developed user personas and user flow. Focused on simple navigation, clean layout, and user-friendly experience.</p>
+                        <div class="flex gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">User Research</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Personas</span>
+                        </div>
+                        <button class="mt-4 w-full gradient-bg text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all card-hover open-project">
+                            <i class="ri-eye-line mr-2"></i>View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in project-card" data-project="3">
+                    <div class="overflow-hidden">
+                        <img src="/image/Food Delivery App_ home(1).png" alt="Food Delivery App" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-orange-100 text-orange-600 px-3 py-1 rounded-full text-sm font-semibold">Food & Drink</span>
+                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">Mobile App</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Food Delivery App</h3>
+                        <p class="text-gray-600 mb-4">Designed a mobile food delivery app focused on providing a smooth and easy ordering experience. Helps users quickly search for food, view menus, and place orders with a simple and clean interface.</p>
+                        <div class="flex gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Wireframing</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Visual Design</span>
+                        </div>
+                        <button class="mt-4 w-full gradient-bg text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all card-hover open-project">
+                            <i class="ri-eye-line mr-2"></i>View Project
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden card-hover fade-in project-card" data-project="4">
+                    <div class="overflow-hidden">
+                        <img src="/image/Finance App Finnal Look (1).png" alt="Finance App" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="bg-green-100 text-green-600 px-3 py-1 rounded-full text-sm font-semibold">Finance</span>
+                            <span class="bg-blue-100 text-blue-600 px-3 py-1 rounded-full text-sm font-semibold">Mobile App</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-3">Finance App</h3>
+                        <p class="text-gray-600 mb-4">Designed a modern finance mobile application focused on helping users manage their finances effectively. Features intuitive dashboard, expense tracking, budget management, and secure transaction capabilities.</p>
+                        <div class="flex gap-2">
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Figma</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">UI Design</span>
+                            <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-xs">Data Visualization</span>
+                        </div>
+                        <button class="mt-4 w-full gradient-bg text-white py-3 rounded-xl font-semibold hover:shadow-lg transition-all card-hover open-project">
+                            <i class="ri-eye-line mr-2"></i>View Project
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Skills & <span class="gradient-text">Tools</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Design Skills</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">UX Research</span>
+                                <span class="text-purple-600 font-semibold">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">User Interview</span>
+                                <span class="text-purple-600 font-semibold">85%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="85%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Wireframing</span>
+                                <span class="text-purple-600 font-semibold">95%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="95%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">User Flow</span>
+                                <span class="text-purple-600 font-semibold">90%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="90%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Visual Design</span>
+                                <span class="text-purple-600 font-semibold">92%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="92%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Usability Testing</span>
+                                <span class="text-purple-600 font-semibold">88%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="88%"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-semibold">Application & Web Design</span>
+                                <span class="text-purple-600 font-semibold">93%</span>
+                            </div>
+                            <div class="bg-gray-200 rounded-full h-3">
+                                <div class="gradient-bg h-3 rounded-full skill-bar" style="width: 0%" data-width="93%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-6">Tools & Software</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-xl text-center card-hover">
+                            <i class="ri-figma-line text-5xl text-purple-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Figma</h4>
+                            <p class="text-gray-600 text-sm">Primary Design Tool</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-50 to-cyan-50 p-6 rounded-xl text-center card-hover">
+                            <i class="ri-layout-masonry-line text-5xl text-blue-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">FigJam</h4>
+                            <p class="text-gray-600 text-sm">Collaboration & Whiteboarding</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-50 to-emerald-50 p-6 rounded-xl text-center card-hover">
+                            <i class="ri-palette-line text-5xl text-green-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Visual Design</h4>
+                            <p class="text-gray-600 text-sm">Color & Typography</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-50 to-amber-50 p-6 rounded-xl text-center card-hover">
+                            <i class="ri-smartphone-line text-5xl text-orange-600 mb-3"></i>
+                            <h4 class="font-bold text-lg">Responsive Design</h4>
+                            <p class="text-gray-600 text-sm">Mobile & Web</p>
+                        </div>
+                    </div>
+                    <div class="mt-8 bg-gray-50 p-6 rounded-xl">
+                        <h4 class="font-bold text-lg mb-4">Additional Skills</h4>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">User Personas</span>
+                            <span class="bg-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">Information Architecture</span>
+                            <span class="bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">Prototyping</span>
+                            <span class="bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-medium">Design Systems</span>
+                            <span class="bg-pink-100 text-pink-700 px-4 py-2 rounded-full text-sm font-medium">Interaction Design</span>
+                            <span class="bg-cyan-100 text-cyan-700 px-4 py-2 rounded-full text-sm font-medium">Accessibility</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-50 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl font-bold mb-4">Get In <span class="gradient-text">Touch</span></h2>
+                <div class="w-20 h-1 gradient-bg mx-auto rounded-full"></div>
+                <p class="text-gray-600 mt-4 text-lg">Feel free to reach out for collaborations or opportunities</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="fade-in">
+                    <h3 class="text-2xl font-bold mb-8 text-center">Contact Information</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="flex items-center gap-4 bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="gradient-bg p-4 rounded-full">
+                                <i class="ri-phone-fill text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Phone</p>
+                                <a href="tel:+91895549035" class="font-semibold text-gray-800 hover:text-purple-600">+91 89554 9035</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="gradient-bg p-4 rounded-full">
+                                <i class="ri-mail-send-fill text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Email</p>
+                                <a href="mailto:siyapareek18@gmail.com" class="font-semibold text-gray-800 hover:text-purple-600">siyapareek18@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="gradient-bg p-4 rounded-full">
+                                <i class="ri-map-pin-fill text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">Location</p>
+                                <p class="font-semibold text-gray-800">Kota, Rajasthan, India</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4 bg-white p-6 rounded-xl shadow-md card-hover">
+                            <div class="gradient-bg p-4 rounded-full">
+                                <i class="ri-linkedin-fill text-white text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-500 text-sm">LinkedIn</p>
+                                <a href="https://www.linkedin.com/in/siya-pareek-5b9b3b367/" target="_blank" class="font-semibold text-gray-800 hover:text-purple-600">View Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-12 text-center">
+                        <div class="inline-block bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl shadow-lg">
+                            <h4 class="text-xl font-bold mb-4">Let's Work Together</h4>
+                            <p class="text-gray-600 mb-6 max-w-md">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+                            <a href="mailto:siyapareek18@gmail.com" class="gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all card-hover glow inline-block">
+                                <i class="ri-mail-send-line mr-2"></i>Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Siya Pareek</h3>
+                    <p class="text-gray-400">UI/UX Designer creating engaging and user-friendly interfaces that align with business goals.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Connect</h4>
+                    <div class="flex gap-4">
+                        <a href="https://www.linkedin.com/in/siya-pareek-5b9b3b367/" target="_blank" class="bg-gray-800 p-3 rounded-full hover:bg-purple-600 transition-colors transform hover:scale-110">
+                            <i class="ri-linkedin-fill text-xl"></i>
+                        </a>
+                        <a href="mailto:siyapareek18@gmail.com" class="bg-gray-800 p-3 rounded-full hover:bg-purple-600 transition-colors transform hover:scale-110">
+                            <i class="ri-mail-send-fill text-xl"></i>
+                        </a>
+                        <a href="tel:+91895549035" class="bg-gray-800 p-3 rounded-full hover:bg-purple-600 transition-colors transform hover:scale-110">
+                            <i class="ri-phone-fill text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center">
+                <p class="text-gray-400">&copy; 2024 Siya Pareek. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="project-modal">
+        <div class="modal-close" id="modal-close">
+            <i class="ri-close-line text-white text-3xl"></i>
+        </div>
+        <div class="modal-content min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white">
+            <!-- 3D Background Canvas -->
+            <canvas id="modal-canvas" class="fixed inset-0 w-full h-full"></canvas>
+            
+            <!-- Modal Content -->
+            <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+                <!-- Project Header -->
+                <div class="modal-section text-center mb-16">
+                    <div class="inline-block gradient-bg px-6 py-2 rounded-full text-sm font-semibold mb-4" id="project-category"></div>
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6 text-3d" id="project-title"></h1>
+                    <p class="text-xl text-gray-300 max-w-3xl mx-auto" id="project-description"></p>
+                </div>
+
+                <!-- 3D Image Gallery -->
+                <div class="modal-section gallery-container mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Project Gallery</h2>
+                    <div class="modal-gallery" id="project-gallery"></div>
+                </div>
+
+                <!-- Project Details -->
+                <div class="modal-section grid md:grid-cols-2 gap-12 mb-16">
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="ri-information-line text-purple-400"></i>
+                            Project Overview
+                        </h3>
+                        <div class="space-y-4 text-gray-300" id="project-overview"></div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                            <i class="ri-tools-line text-purple-400"></i>
+                            Tools & Technologies
+                        </h3>
+                        <div class="flex flex-wrap gap-3" id="project-tools"></div>
+                    </div>
+                </div>
+
+                <!-- Design Process -->
+                <div class="modal-section mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Design Process</h2>
+                    <div class="grid md:grid-cols-4 gap-6">
+                        <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-md p-6 rounded-2xl text-center card-hover">
+                            <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-search-line text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Research</h4>
+                            <p class="text-gray-400 text-sm">Understanding user needs and business goals</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 backdrop-blur-md p-6 rounded-2xl text-center card-hover">
+                            <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-pencil-line text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Wireframe</h4>
+                            <p class="text-gray-400 text-sm">Creating low-fidelity layouts and structure</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-green-500/20 to-emerald-500/20 backdrop-blur-md p-6 rounded-2xl text-center card-hover">
+                            <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-palette-line text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Design</h4>
+                            <p class="text-gray-400 text-sm">Developing high-fidelity visual designs</p>
+                        </div>
+                        <div class="bg-gradient-to-br from-orange-500/20 to-amber-500/20 backdrop-blur-md p-6 rounded-2xl text-center card-hover">
+                            <div class="gradient-bg w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-test-tube-line text-2xl text-white"></i>
+                            </div>
+                            <h4 class="font-bold text-lg mb-2">Test</h4>
+                            <p class="text-gray-400 text-sm">Validating designs through user testing</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Key Features -->
+                <div class="modal-section mb-16">
+                    <h2 class="text-3xl font-bold mb-8 text-center">Key Features</h2>
+                    <div class="grid md:grid-cols-3 gap-6" id="project-features"></div>
+                </div>
+
+                <!-- CTA -->
+                <div class="modal-section text-center">
+                    <div class="inline-block bg-white/10 backdrop-blur-md p-8 rounded-2xl">
+                        <h3 class="text-2xl font-bold mb-4">Interested in this project?</h3>
+                        <p class="text-gray-300 mb-6">Let's discuss how I can help bring your vision to life</p>
+                        <a href="#contact" class="gradient-bg text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition-all card-hover glow inline-block">
+                            <i class="ri-mail-send-line mr-2"></i>Get In Touch
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
